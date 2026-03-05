@@ -483,5 +483,129 @@ Input[type="email"]:hover{
 
 
 /*---------*/
-/*Nav Styles*/
+/*Values Styles*/
 /*---------*/
+
+#Values{
+    height: 100vh;
+    width: 100vw;
+}
+
+.Values__Div--Left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+}
+
+.Values--Title{
+    color:rgb(106, 3, 249);
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.Values__Header{
+    color: #243e63;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 28px;
+}
+
+.Values__Subheader{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+    max-width: 85%;
+    color: #7c8ba1;
+    margin-bottom: 28px;
+}
+
+.Value--Name{
+    margin-left: 12px;
+    font-size: 20px;
+    color: #243e63;
+    margin-bottom: 12px;
+}
+
+.Value--Caption{
+    max-width: 80%;
+    color: #7c8ba1;
+    line-height: 26px;
+}
+
+.Value--Decor{
+    display: flex;
+    align-items: center;
+}
+
+.Value--Wrapper{
+    display: flex;
+}
+
+.Value{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.Value__Img--Mask{
+    height: 80%;
+    width: 10%;
+    background-color: rgb(167, 230, 167);
+    border-radius: 50%;
+    padding: 2px 6px;
+    margin-bottom: 12px;
+}
+
+.feather-dollar-sign{
+    height: 100%;
+    width: 100%;
+    opacity: 60%;
+}
+
+.Value__Img--MaskTwo{
+    height: 80%;
+    width: 10%;
+    background-color: rgb(251, 165, 162);
+    border-radius: 60%;
+    padding: 2px 6px;
+    margin-bottom: 12px;
+}
+
+.feather-briefcase{
+    height: 100%;
+    width: 100%;
+    opacity: 50%;
+}
+
+.Values__Div--Right{
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+
+.Values__Btn{
+    padding: 14px 24px;
+    border: none;
+    border-radius: 32px;
+    color: #fff;
+    background-color:rgb(106, 3, 249);
+    font-size: 14px;
+    font-weight: 700;
+    max-width: 140px;
+    margin-top: 40px;
+}
+
+.Values__Img--Mask{
+    height: 100%;
+    width: 100%;
+}
+
+.Values__Img{
+    height: 100%;
+    width: 100%;
+}
+
