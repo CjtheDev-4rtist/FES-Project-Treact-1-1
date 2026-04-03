@@ -1,5 +1,8 @@
+/*---------------*/
 /*Universal Styles*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/*---------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     padding: 0;
@@ -8,75 +11,145 @@
     font-family: "Inter", sans-serif;
 }
 
-html{
-    scroll-behavior: smooth;
+.Column{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
-a{
-    text-decoration: none;
+body{
+    overflow-x: hidden;
+}
+
+.Row{
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.Row__Column{
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.Row__Unique{
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.Row__Of__Torture{
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.Section--Title{
+    color: #6415FF;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.Section__Header{
+    color: #243E63;
+    font-size: 48px;
+    font-weight: 900;
+    margin: 16px 0;
+}
+
+.Section__Para{
+    color: #7C8BA1;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.Purple{
+    color: #6415FF;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 li{
     list-style-type: none;
 }
 
-.Purple{
-    color: #6415ff;
+a{
+    text-decoration: none;
 }
 
-.Container{
-    height: 100%;
-    width: 100%;
-    padding: 56px 0;
-}
+/*---------------*/
+/*Home Styles*/
+/*---------------*/
 
-.Row{
-    height: 100%;
-    width: 100%;
+/*Nav Section*/
+
+Nav{
     display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.Unique__Row{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.Row__Column{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-/*Nav Styles*/
-
-
-nav{
-    display: flex;
-    height: 120px;
+    height: 110px;
     width: 100vw;
-    padding: 0 48px; 
-}
 
+    animation: slideToTheLeft 900ms ease;
+}
 
 .Nav__Div--Container{
     display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.Nav__Figure{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.Logo{
     height: 100%;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: space-between;
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.Logo--Text{
+    margin-left: 8px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #243E63;
+    transition: all 300ms ease;
+}
+
+.Logo--Text:hover{
+    color:#6415FF;
+    cursor: pointer;
 }
 
 .Nav__List{
@@ -84,274 +157,352 @@ nav{
 }
 
 .Nav__Link{
-    margin-left: 48px;
+    color:#243E63;
+    margin: 0 24px;
     font-size: 14px;
     font-weight: 600;
-    color: #243E63;
+    transition: all 300ms ease;
+    position: relative
 }
 
-.Nav__Link--Awkward{
-    margin-left: 56px;
-    font-weight: 600;
-    font-size: 14px;
-    color: #243E63;
+.Nav__Link::after,
+.Nav__Link--Secondary::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:#6415FF;
+    transform: translateY(8px);
+    opacity: 0;
+    transition: all 300ms ease-in-out;
 }
+
+.Nav__Link:hover::after{
+    opacity: 1;
+}
+
+.Nav__Link:hover,
+.Nav__Link--Secondary:hover{
+    color:#6415FF;
+}
+
+.Nav__Link--Secondary{
+    color:#243E63;
+    margin: 0 24px 0 48px;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+}
+
+.Nav__Link--Secondary:hover::after{
+    opacity: 1;
+}
+
 
 .Nav__Link--Primary{
-    font-size: 14px;
-    color: #fff;
-    background-color: #6415ff;
     padding: 12px 32px;
-    border: none;
-    border-radius: 32px;
+    font-size: 14px;
     font-weight: 600;
-    margin-left: 24px;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    background-color:#6415FF;
+    transition: all 300ms ease;
 }
 
-.Nav__Div--Logo-Cap{
+.Nav__Link--Primary:hover{
+    background-color:#3d0e9d;
+    cursor: pointer;
+}
+
+.Btn__Menu{
+    background-color: transparent;
+    font-size: 24px;
+    text-align: center;
+    border: none;
+    display: none;
+}
+
+.Menu__Backdrop{
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
     display: flex;
-    height: 100%;
-    width: 100%;
-    max-width: 260px;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.Menu--Open .Menu__Backdrop{
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+.Menu--Open{
+    max-height: 70vh;
+    overflow-Y: hidden;
+}
+
+.Btn__Menu--Close{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8px;
+    color: #6415FF;
+}
+
+.Menu__Links{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.Logo{
-    max-width: 40px;
+.Menu__List{
+    padding: 32px 0px;
 }
 
-.Logo--Text{
-    font-weight: 900;
-    font-size: 24px;
+.Menu__Link{
+    color:#243E63;
+    font-size: 18px;
 }
 
 
+/*Header Section*/
 
-/*Home Styles*/
-
-#Home{
-    height: 100vh;
+header{
+    height: calc(100vh - 110px);
     width: 100vw;
+
+    animation: slideToTheLeft 900ms ease;
 }
 
 .Home__Div--Left{
     height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 40%;
+    padding-top: 80px;
 }
 
 .Home__Header{
-    color: #1A202C;
-    max-width: 85%;
     font-size: 48px;
+    color: #1A202C;
 }
 
-
-.Home__Subheader{
-    font-size: 18px;
+.Home__Para{
     color: #243E63;
-    margin-top: 32px;
-    line-height: 28px;
-    max-width: 95%;
+    font-size: 18px;
+    line-height: 26px;
+    margin: 24px 0;
 }
 
-.Home--Subscript{
-    color: #A0AEC0;
-    font-size: 12px;
-    font-weight: 700;
-    margin-top: 56px;
-    margin-bottom: 16px;
-}
-
-input[type="email"]{
-    padding: 22px 16px;
-    font-size: 16px;
-    width: 83%;
-    border-radius: 32px;
-    border: 2px solid #a0aec06e;
-    margin-top: 32px;
-    transition: all 300ms ease;
-}
-
-input[type="email"]:hover{
-    border: 2px solid #A0AEC0;
-}
-
-Input::placeholder{
-    color:#A0AEC0;
-    opacity: 60%;
-}
-
-.Home__Input:focus{
-    border: 2px solid #6415ff;
-    outline: none;
-}
-
-.Home__Form{
-    position: relative;
-}
-
-.Home__Btn{
-    position: absolute;
-    color: #fff;
-    background-color:#6415ff;
-    padding: 18px 40px;
-    font-size: 16px;
-    font-weight: 700;
-    left: 300px;
-    top: 38px;
-    border-radius: 32px;
-    border: none;
-}
-
-.Home__Img--Customer-Mask{
+.Home-Input--Wrapper{
     height: 100%;
     width: 100%;
-    padding-right: 12px;
-}
-
-.Home__Img--Customer{
-    height: 70%;
-    width: 100%;
-    max-width: 70%;
-    opacity: 50%;
-}
-
-.Home__Div--Right{
-    height:100%;
-    width: 55%;
+    margin-bottom: 64px;
+    max-height: 15%;
+    position: relative;
     display: flex;
     align-items: center;
 }
 
-.Home__Img--Mask{
+.Home__Btn{
+    padding: 18px 32px;
+    border: none;
+    border-radius: 32px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color:#6415FF;
+    position: absolute;
+    left: 258px;
+    transition: all 300ms ease;
+}
+
+input[type="email"]{
+    height: 75%;
+    width: 81%;
+    position: relative;
+    font-size: 16px;
+    border-radius: 32px;
+    padding: 32px;
+    border: 2px solid #A0AEC0;
+    opacity: 50%;
+    transition: all 300ms ease;
+}
+
+input:hover{
+    opacity: 100%;
+}
+
+input:focus{
+    border: 2px solid #6415FF;
+    outline: none;
+}
+
+input::placeholder{
+    color:#A0AEC0;
+    font-weight: 500;
+}
+
+
+
+.Home__Btn:hover{
+    background-color:#3d0e9d;
+    cursor: pointer;
+}
+
+.Home--Caption{
+    color: #A0AEC0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+
+.Home-Left__Figure{
+    height: 100%;
+    width: 100%;
+    max-height: 36px;
+    max-width: 80%;
+}
+
+.Home-Left__Img{
+    height: 100%;
+    width: 100%;
+    opacity: 55%;
+}
+
+.Home__Div--Right{
+    height: 100%;
+    width: 60%;
+    overflow: hidden;
+}
+
+.Home-Right__Figure{
     height: 100%;
     width: 100%;
 }
 
-.Home__Img{
+
+.Home-Right__Img{
     height: 100%;
     width: 100%;
 }
 
 
-
+/*---------------*/
 /*Features Styles*/
+/*---------------*/
 
 #Features{
     height: 100vh;
     width: 100vw;
+    margin-top: 100px;
 }
 
 .Features__Div--Top{
-    height: 30%;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.Features--Title{
-    color:#6415ff;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-.Features__Header{
-    color: #243E63;
-    font-size: 50px;
-    font-weight: 800;
-    margin: 16px 0 24px 0;
-}
-
-.Features__Subheader{
-    color: #7C8BA1;
+    margin: 0 auto;
     text-align: center;
+    height: 30%;
+    width: 100%;
+    
+}
+
+.Features__Para{
+    color: #7C8BA1;
     font-size: 18px;
     font-weight: 500;
-    width: 45%;
-    line-height: 28px;
+    text-align: center;
+    width: 100%;
+    max-width: 40%;
+    margin: 0 auto;
+    line-height: 30px;
 }
 
 .Features__Div--Bottom{
     height: 70%;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .Service--Wrapper{
-    height: 100%;
-    width: 100%;
     display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 48px;
 }
 
 .Service{
     display: flex;
-    height: 50%;
-    width: calc(100% / 3);
-    max-width: 300px;
-    align-items: center;
-    justify-content: center;
-    margin: 0px 28px;
+    width: calc(100% /3);
+    height: calc(100% / 2);
 }
 
-.Service-Icon{
-    display: flex;
+.Service-Decor--Container{
+    margin-right: 12px;
+    height: 100%;
+    width: 100%;
+    width: 20%;
+}
+
+.Service-Decor--Inner{
     height: 100%;
     max-height: 65px;
     width: 100%;
-    max-width: 65px;
-    border: 1px solid #7c8ba149;
-    border-radius: 50%;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    margin-right: 12px;
+    justify-content: center;
 }
 
-.Service-Icon--Wrapper{
-    display: flex;
-    margin: 0 auto;
-    height: 100%;
-    max-height: 50%;
-    width: 100%;
-    max-width: 50%;
-}
-
-.Service__Icon{
+.Service__Figure{
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a0aec06f;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-.Service--Inner{
-    display: flex;
-    flex-direction: column;
+.Service--Text{
+    height: 100%;
+    width: 80%;
 }
 
 .Service__Header{
-    padding-top: 64px;
     font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 12px;
+    color:#243E63;
+    margin: 12px 0 16px 0;
 }
 
 .Service__Para{
-    color:#7C8BA1;
-    line-height: 28px;
     font-size: 16px;
     font-weight: 500;
-    max-width: 90%;
+    line-height: 30px;
+    color:#7C8BA1;
+    width: 100%;
+    max-width: 80%;
 }
 
+
+/*---------------*/
 /*Quality Styles*/
+/*---------------*/
 
 #Quality{
     height: 100vh;
@@ -364,43 +515,25 @@ Input::placeholder{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 48px;
-}
-
-.Quality--Title{
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color:#6415ff;
+    padding-right: 24px;
 }
 
 .Quality__Header{
-    font-size: 50px;
-    color:#243E63;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin: 18px 0;
+    color: #243E63;
+    font-size: 48px;
+    font-weight: 900;
+    width: 100%;
+    margin: 16px 0;
 }
 
 .Quality__Para{
-    font-size: 18px;
-    color:#7C8BA1;
-    font-weight: 500;
-    line-height: 30px;
-    max-width: 95%;
-}
-
-.Quality__Btn{
-    padding: 14px 16px;
-    border: none;
-    border-radius: 32px;
-    background-color:#6415ff;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    margin-top: 32px;
-    max-width: 145px;
-}
+        font-size: 18px;
+        font-weight: 500;
+        color:#7C8BA1;
+        line-height: 28px;
+        width: 100%;
+        max-width: 88%;
+    }
 
 .Quality__Div--Right{
     height: 100%;
@@ -410,11 +543,11 @@ Input::placeholder{
     justify-content: center;
 }
 
-.Quality__Img--Mask{
-    height: 70%;
+.Quality__Figure{
+    height: 60%;
     width: 100%;
-    border: 1px solid #7c8ba149;
-    border-radius: 6px;
+    border: 1px solid #a0aec06f;
+    border-radius: 4px;
     overflow: hidden;
 }
 
@@ -424,8 +557,28 @@ Input::placeholder{
 }
 
 
-/*Steps Styles*/
+.Quality__Btn{
+    padding: 14px 32px;
+    margin-top: 32px;
+    max-width: 140px;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 32px;
+    color: #fff;
+    background-color:#6415FF;
+    transition: all 300ms ease;
+}
 
+.Quality__Btn:hover{
+    background-color:#3d0e9d;
+    cursor: pointer;
+}
+
+
+/*---------------*/
+/*Steps Styles*/
+/*---------------*/
 
 #Steps{
     height: 100vh;
@@ -433,15 +586,14 @@ Input::placeholder{
 }
 
 .Steps__Div--Left{
-    display: flex;
     height: 100%;
     width: 50%;
+    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.Steps__Img--Mask{
-    height: 60%;
+.Steps__Figure{
+    height: 50%;
     width: 100%;
 }
 
@@ -451,75 +603,69 @@ Input::placeholder{
 }
 
 .Steps__Div--Right{
-    display: flex;
-    flex-direction: column;
     height: 100%;
     width: 50%;
+    padding-top: 160px;
+    padding-left: 56px;
+    align-items: center;
     justify-content: center;
-    padding: 56px 0 0 64px;
 }
 
 .Steps-Right--Top{
-    display: flex;
-    flex-direction: column;
-    height: 20%;
+    height: 25%;
     width: 100%;
 }
 
-.Steps--Title{
-    font-size: 16px;
-    font-weight: 700;
-    color:#6415ff;
-    margin-bottom: 12px
-}
-
 .Steps__Header{
-    font-size: 50px;
-    font-weight: 800;
+    font-size: 48px;
+    font-weight: 900;
+    width: 100%;
+    margin:24px 0; 
+    max-width: 85%;
     color:#243E63;
-    margin-top: 12px;
 }
 
 .Steps-Right--Bottom{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 80%;
+    height: 75%;
     width: 100%;
 }
 
 .Step{
-    display: flex;
     height: calc(100% / 3);
-    max-height: 120px;
     width: 100%;
-    align-items: start;
+    display: flex;
+    margin-bottom: 24px;
 }
 
-.Step--Num{
-    display: flex;
-    margin-right: 24px;
-    font-size: 38px;
+
+.Number{
+    font-size: 36px;
     font-weight: 700;
     color:#CBD5E0;
+    margin-right: 24px;
 }
 
 .Step__Header{
+    font-size: 20px;
     font-weight: 600;
     color:#243E63;
-    margin-bottom: 12px;
 }
 
 .Step__Para{
-    line-height: 32px;
-    color:#718096;
-    font-weight: 500;
     font-size: 14px;
-    width: 75%;
+    font-weight: 500;
+    color:#7C8BA1;
+    width: 100%;
+    max-width: 75%;
+    margin-top: 12px;
+    line-height: 24px;
 }
 
 
+
+/*---------------*/
 /*Values Styles*/
+/*---------------*/
 
 #Values{
     height: 100vh;
@@ -527,50 +673,34 @@ Input::placeholder{
 }
 
 .Values__Div--Left{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     height: 100%;
     width: 50%;
-    padding: 16px 56px 0px 0px;
+    padding: 80px 32px 0 0;
 }
 
-
 .Values-Left--Top{
-    display: flex;
-    flex-direction: column;
-    height: 30%;
+    height: 40%;
     width: 100%;
-    justify-content: center;
-    padding-top: 24px;
 }
 
 .Values__Header{
-    font-weight: 800;
-    font-size: 50px;
-    margin: 24px 0px 24px 0;
+    font-size: 48px;
+    font-weight: 900;
+    width: 100%;
+    margin: 24px 0;
+    max-width: 85%;
     color:#243E63;
-}
-
-.Values--Title{
-    color:#6415ff;
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .Values__Para{
     font-size: 18px;
     font-weight: 500;
-    line-height: 24px;
-    max-width: 95%;
-    color:#718BA1;
+    color:#718096;
+    line-height: 30px;
 }
 
 .Values-Left--Bottom{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 50%;
+    height: 60%;
     width: 100%;
     padding-top: 48px;
 }
@@ -578,81 +708,97 @@ Input::placeholder{
 .Principle--Wrapper{
     display: flex;
     width: 100%;
-    padding-top: 24px;
+    height: 50%;
+    padding-top: 32px;
 }
 
 .Principle{
     display: flex;
     flex-direction: column;
-    width: 50%;
-    padding-top: 48px;
+    width: calc(100% / 2);
+    height: 100%;
 }
 
-.Principle__Div--Inner{
+.Principle--Top{
+    height: 25%;
+    width: 100%;
+    max-width: 75%;
     display: flex;
     align-items: center;
 }
 
-.Principle-Icon--Decor,
-.Principle-Icon--DecorTwo{
-    display: flex; 
+.Icon--Decor{
+    width: 100%;
+    height: 100%;
+}
+
+.Icon__Figure{
     height: 100%;
     width: 100%;
-    max-height: 40px;
     max-width: 40px;
-    border: 2px solid;
-    border-radius: 50%;
-    padding: 12px;
-    margin-right: 12px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
     border: none;
-
+    border-radius: 50%;
+    background-color:#9AE6B4;
+    color:#2b5e3c
 }
 
-.Principle-Icon--Decor{
-    background-color: #9AE6B4;
-    color:#418458;
+.Principle__Header{
+    margin-left: 8px;
+    color:#243E63;
 }
 
-.Principle-Icon--DecorTwo{
+.Icon__Figure--Two{
+    height: 100%;
+    width: 100%;
+    max-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
     background-color: #FEB2B2;
-    color:#9f4c4c;
+    color:#9a4b4b;
 }
 
-.Prince__Header{
-    color: #243E63;
-}
-
-.Principle__Para{
-    margin-top: 12px;
-    line-height: 24px;
-    font-weight: 400;
-    color:#718096;
-    margin-bottom: 40px;
+.Principle--Bottom{
+    height: 75%;
     width: 90%;
 }
 
-.Values__Btn{
-    margin-top: 24px;
+
+.Principle__Para{
+    line-height: 30px;
+    color:#7C8BA1;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.Principle__Btn{
     padding: 14px 32px;
-    max-width: 140px;
-    border-radius: 32px;
-    background-color:#6415ff;
-    border: none;
+    font-size: 14px;
     font-weight: 700;
     color: #fff;
+    background-color:#6415FF;
+    border: none;
+    border-radius: 32px;
+    margin-top: 28px;
+    transition: all 300ms ease;
+}
+
+.Principle__Btn:hover{
+    background-color:#3d0e9d;
+    cursor: pointer;
 }
 
 .Values__Div--Right{
     height: 100%;
     width: 50%;
-    align-items: center;
 }
 
-
-.Values__Img--Mask{
+.Values__Figure{
     height: 100%;
     width: 100%;
 }
@@ -663,327 +809,353 @@ Input::placeholder{
 }
 
 
+/*---------------*/
+/*Pricing Styles*/
+/*---------------*/
 
-/*Plans Styles*/
-
-#Plans{
-    height: 150vh;
+#Pricing{
+    height: 130vh;
     width: 100vw;
 }
 
-.Plans__Div--Top{
-    display: flex;
-    flex-direction: column;
-    height: 20%;
+.Pricing__Div--Top{
+    height: 30vh;
     width: 100%;
-    margin: 0 auto;
-    align-items: center;
+    text-align: center;
 }
 
-.Plans--Title{
-    font-weight: 700;
-    color:#6415ff;
-    letter-spacing: 1px;
-    padding-right: 28px;
+.Pricing__Header{
+    color: #243E63;
+    font-size: 48px;
+    font-weight: 900;
+    margin: 16px 0;
+    letter-spacing: 2px;
 }
 
-.Plans__Header{
-    font-size: 50px;
-    font-weight: 800;
-    color:#243E63;
-    margin: 24px;
-}
-
-.Plans__Para{
+.Pricing__Para{
+    width: 100%;
+    max-width: 40%;
     font-size: 18px;
     font-weight: 500;
-    color:#718BA1;
-    max-width: 55%;
-    text-align: center;
-    line-height: 32px;
+    line-height: 30px;
+    color:#7C8BA1;
+    margin: 0 auto;
 }
 
-.Plans__Div--Bottom{
-    display: flex;
-    height: 80%;
+.Pricing__Div--Bottom{
+    height: 100vh;
     width: 100%;
 }
 
 .Plan--Wrapper{
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
+    height: 90%;
     width: 100%;
-    margin: 0 auto;
+    padding: 0 24px;
     justify-content: center;
-    align-items: center;
 }
 
-.Plan--Term{
-    font-size: 16px;
-    color:#A0AEC0;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.Plan--Offer{
-    padding-top: 24px;
-}
-
-.Left-Plan,
-.Right-Plan{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 75%;
-    width: calc(100% /3);
-    margin: 0px 16px;
-    max-width: 370px;
-    border: 1px solid #a0aec083;
+.Left-Plan{
+    width: calc(100% / 3);
+    max-width: 380px;
+    height: 95%;
+    background-image: linear-gradient(to right, #6ccfbb, #9ae6e6);
+    margin-right: 48px;
+    border-radius: 8px;
     overflow: hidden;
-    border-radius: 12px;
-    padding-top: 8px;
+    box-shadow: 1px 1px 5px #bdbdbd;
+}
+
+.Middle-Plan{
+    width: calc(100% / 3);
+    max-width: 380px;
+    height: 95%;
+    background-image: linear-gradient(to bottom right,#3d4dc8, #4f60db);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px #bdbdbd;
+}
+
+.Right-Plan{
+    width: calc(100% / 3);
+    max-width: 380px;
+    height: 95%;
+    background-image: linear-gradient(to right, #F56565, #FEB2B2);
+    margin-left: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px #bdbdbd;
 }
 
 
 .LP--Top,
 .RP--Top{
+    background-color: #fff;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     height: 35%;
     width: 100%;
-    text-align: center;
-    background-color: #fff;
-    padding-top: 16px;
-}
-
-
-.LP--Mid,
-.RP--Mid{
-    display: flex;
-    flex-direction: column;
-    height: 45%;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    background-color: #fff;
-    border: 1px solid #a0aec083;
-}
-
-.LP--Bottom,
-.RP--Bottom{
-    display: flex;
-    height: 20%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-}
-
-.Left-Plan{
-    background: linear-gradient(to right, rgb(77, 196, 137), rgb(156, 245, 213));
-}
-
-.LP--Title{
-    color:#1A202C;
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.LP__Header{
-    color:#1A202C;
-    font-size: 48px;
-    margin: 12px 0 24px 0;
-}
-
-.LP__Btn{
-    padding: 16px 48px;
-    border-radius: 32px;
-    background: linear-gradient(to right, rgb(77, 196, 137), rgb(156, 245, 213));
-    color: #fff;
-    font-weight: 700;
-    border: none;
-    letter-spacing: 1px;
-}
-
-.Inner-Left__Header{
-    font-size: 20px;
-}
-
-.Right-Plan{
-    background: linear-gradient(to right, rgb(203, 55, 50), rgb(245, 156, 156));
-}
-
-.RP--Title{
-    font-size: 20px;
-    color:#1A202C;
-    font-weight: 700;
-}
-
-.RP__Header{
-    font-size: 48px;
-    color:#1A202C;
-    margin: 12px 0 24px 0;
-}
-
-.RP__Btn{
-    padding: 16px 48px;
-    border-radius: 32px;
-    border: none;
-    background: linear-gradient(to right, rgb(203, 55, 50), rgb(245, 156, 156));
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-
-.Middle-Plan{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 75%;
-    width: calc(100% /3);
-    max-width: 380px;
-    margin: 0px 16px;
-    border-radius: 12px;
-    border: 2px solid rgb(75, 83, 191);
-    background: linear-gradient(to right, rgb(79, 87, 202), rgb(94, 103, 236));
+    margin-top: 8px;
+    overflow: hidden;
 }
 
 .MP--Top{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     height: 35%;
     width: 100%;
-    text-align: center;
-    padding-top: 16px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.LP--Title,
+.RP--Title{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.MP--Title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.LP__Header,
+.RP__Header{
+    font-size: 46px;
+    letter-spacing: 1px;
+    margin: 12px 0;
+}
+
+.MP__Header{
+    font-size: 46px;
+    letter-spacing: 1px;
+    margin: 12px 0;
+    color: #fff;
+}
+
+.LP--Caption,
+.RP--Caption{
+    font-size: 16px;
+    font-weight: 700;
+    color: #A0AEC0;
+    letter-spacing: 2px;
+}
+
+.MP--Caption{
+    font-size: 16px;
+    font-weight: 700;
+    color: #e0eaf7;
+}
+
+.LP--Mid,
+.RP--Mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 45%;
+    border: 1px solid #bfcdde;
 }
 
 .MP--Mid{
     display: flex;
     flex-direction: column;
-    height: 45%;
-    width: 100%;
-    text-align: center;
+    align-items: center;
     justify-content: center;
-    border: 2px solid rgb(75, 83, 191);
+    height: 45%;
+    border: 1px solid #89a7cb;
 }
 
-.Inner-Mid__Header{
+.LP--For,
+.RP--For{
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.MP--For{
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
     color: #fff;
+}
+
+.LP--Offer,
+.RP--Offer{
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color:#7C8BA1;
+}
+
+.MP--Offer{
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #e8e9f1;
+}
+
+.LP--Bottom,
+.RP--Bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    background-color: #fff;
 }
 
 .MP--Bottom{
     display: flex;
-    height: 20%;
-    width: 100%;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 20%;
 }
 
-.MP--Title{
-    color: #fff;
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.MP__Header{
-    color: #fff;
-    font-size: 48px;
-    margin: 12px 0 24px 0;
-}
-
-.MP--Term{
-    font-size: 16px;
-    color: #ffffffe4;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.MP--Offer{
-    padding-top: 24px;
-    color: #ffffffd2;
-}
-
-
-.MP__Btn{
-    padding: 16px 48px;
+.LP__Btn,
+.MP__Btn,
+.RP__Btn{
+    padding: 18px 64px;
     border-radius: 32px;
-    color: #6415ff;
-    background-color: #fff;
     border: none;
     font-weight: 700;
-    letter-spacing: 1px;
 }
 
+.LP__Btn{
+    background-image: linear-gradient(to right, #6ccfbb, #9ae6e6);
+    color: #fff;
+    transition: all 300ms ease;
+}
 
-/*Dev-CTA Styles*/
+.LP__Btn:hover{
+    cursor: pointer;
+    opacity: 60%;
+}
 
-#Dev-CTA{
-    height: 70vh;
+.RP__Btn{
+    background-image: linear-gradient(to right, #F56565, #FEB2B2);
+    color: #fff;
+    transition: all 300ms ease-in-out;
+}
+
+.RP__Btn:hover{
+    cursor: pointer;
+    opacity: 60%;
+}
+
+.MP__Btn{
+    background-color: #fff;
+    transition: all 300ms ease;
+    color: #6415FF;
+}
+
+.MP__Btn:hover{
+    cursor: pointer;
+    opacity: 90%;
+}
+
+/*---------------*/
+/*Dev Styles*/
+/*---------------*/
+
+#Dev{
+    height: 50vh;
     width: 100vw;
-    margin-bottom: 60px;
 }
 
 .Dev__Div--Inner{
     display: flex;
     height: 70%;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     align-items: center;
-    background-color:#6415ff;
-    border: none;
-    border-radius: 12px;
+    justify-content: space-evenly;
+    background-color:#6415FF;
+    border-radius: 16px;
 }
 
 .Dev__Header{
-    font-size: 32px;
+    width: 100%;
+    max-width: 40%;
+    font-size: 28px;
     font-weight: 700;
     color: #fff;
-    max-width: 45%;
-    margin-left: 160px;
+}
+
+.Dev__Btn-Wrapper{
+    display: flex;
+    width: 35%;
+    height: 40%;
+    align-items: center;
+    justify-content: center;
 }
 
 .Dev__Btn-One{
-    background-color: #F56565;
-    padding: 22px 40px;
-    border-radius: 32px;
-    border: none;
+    padding: 24px 48px;
+    background-color:#F56565;
     color: #fff;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
+    margin-right: 24px;
+    border: none;
+    border-radius: 32px;
+    transition: all 300ms ease;
+}
+
+.Dev__Btn-One:hover{
+    background-color: #df4f4f;
+    cursor: pointer;
 }
 
 .Dev__Btn-Two{
+    padding: 24px 48px;
     background-color: transparent;
-    border: 1px solid #ffffffaf;
-    border-radius: 32px;
-    font-size: 16px;
-    font-weight: 700;
     color: #fff;
-    padding: 22px 40px;
-    margin-left: 32px;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid #d9e2efc6;
+    border-radius: 32px;
+    transition: all 300ms ease;
 }
 
+.Dev__Btn-Two:hover{
+    color: #cbcbcb;
+    cursor: pointer;
+}
 
+/*---------------*/
 /*Footer Styles*/
+/*---------------*/
 
 footer{
     height: 70vh;
     width: 100vw;
-    background-color:#6415ff;
+    background-color:#6415FF;
+    margin-top: 80px;
 }
 
-.Footer-Row__Column{
+.Footer__Column{
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 1380px;
+}
+
+.Footer__Row-Column{
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
 }
 
@@ -992,570 +1164,2235 @@ footer{
     height: 70%;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    padding-top: 24px;
+    align-items: center;
 }
 
 .Footer-Column--Wrapper{
+    display: flex;
     height: 100%;
     width: 100%;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 0 auto;
 }
 
-.Footer-Column{
+.Footer-Column,
+.Footer-Column-One{
+    display: flex;
     height: 100%;
     width: calc(100% / 5);
-    max-width: 115px;
-    display: flex;
     flex-direction: column;
-    padding-top: 24px;
+    justify-content: center;
+    max-width: 200px;
 }
 
-.Column__Header{
-    font-size: 16px;
-    font-weight: 600;
+.Footer-Column{
+    margin-left: 200px;
+}
+
+.Footer__Header{
+    font-size: 16px; 
+    font-weight: 700;
+    margin: 12px 0 14px 0;
     color: #fff;
-    margin-bottom: 12px;
+    text-align: left;
+    letter-spacing: 1px;
 }
 
-.Column__Link{
+.Footer__Link{
+    text-decoration: none;
+    color: #fff;
+    margin-top: 16px;
     font-size: 14px;
-    color: #fff;
-    margin-top: 14px;
+    font-weight: 500;
+    position: relative;
+}
+
+.Footer__Link::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    transform: translateY(8px);
+    width: 60%;
+    opacity: 0;
+    background-color: #fff;
+    transition: all 300ms ease;
+}
+
+.Footer__Link:hover::after{
+    opacity: 1;
 }
 
 .Footer__Div--Bottom{
     height: 30%;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
     margin: 0 auto;
 }
 
-.Footer--Left-Align{
+.Footer__Figure--Wrapper{
+    height: 20%;
+    width: calc(100% / 3);
     display: flex;
-    height: 100%;
     align-items: center;
+}
+
+.Footer__Figure{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Footer__Img{
+    height: 100%;  
+    width: 20%;
+    max-width: 40px;
 }
 
 .Footer__Logo{
-    max-height: 40px;
-}
-
-.Footer__Logo--Text{
     color: #fff;
-    font-weight: 900;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-.Footer--Mid-Align{
+.Footer__Div--Copyright{
+    width: calc(100% / 3);
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color:#fff;
+    padding-right: 24px;
+}
+
+.Footer__Social{
     display: flex;
     height: 100%;
+    width: calc(100% / 3);
+    justify-content: end;
     align-items: center;
-    justify-content: center;
-}
-
-
-.Footer--Copyright{
     color: #fff;
+    font-size: 24px;
 }
 
-.Footer--Right-Align{
-    display: flex;
-    height: 100%;
-    align-items: center;
+/*---------------*/
+/*Animations*/
+/*---------------*/
+
+
+
+@keyframes  slideToTheLeft{
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
 
-.Footer-Decor{
-    display: flex;
-    color: #fff;
-    text-decoration: none;
-    font-size: 28px;
+@keyframes  slideToTheRight{
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
 
-/* Media Quiery Styles*/
+/*---------------*/
+/*Media Queries*/
+/*---------------*/
 
-@media (max-width: 1280px){
+@media(max-width: 1240px){
+    .Row{
+        max-width: 1180px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 1180px;
+    }
+
     .Home__Btn{
-            left: 284px;
-            top: 38px;
-        
+        left: 268px;
     }
 
-    .Home__Div--Left{
-        padding-left: 48px; 
-        width: 50%;
+    input[type="email"]{
+        width: 90%;
     }
 
-    .Home__Header{
-        font-size: 38px;
-    }
-
-    .Home__Subheader{
-        font-size: 16px;
-        text-align: left;
-    }
-
-    .Home__Div--Right{
-        padding-right: 48px;
-        width: 50%;
-    }
-
-    .Home__Img--Customer{
-        max-width: 80%;
-    }
-
-    .Service{
-        margin: 0px 28px;
-    }
-
-    .Quality__Div--Left{
-        width: 50%;
-        padding-left: 48px;
+    .Row__Unique{
+        max-width: 1180px;
     }
 
     .Quality__Header{
-        font-size: 48px;
-        font-weight: 900;
-    }
-
-    .Quality__Div--Right{
-        width: 50%;
-        padding-right: 48px;
-    }
-
-    .Quality__Img--Mask{
-        height: 55%;
-    }
-
-    .Steps__Div--Left{
-        padding-left: 48px;
-    }
-
-    .Steps-Right--Top{
-        height: 30%;
-        margin-bottom: 64px;
-        justify-content: center;
-    }
-
-    .Step__Para{
-        width: 75%;
-    }
-
-    .Steps__Img--Mask{
-        height: 55%;
-    }
-
-    .Values__Div--Left{
-        padding-left: 48px;
-        width: 50%;
-    }
-
-    .Values__Header{
-        width: 90%;
-        font-weight: 900;
-        letter-spacing: 1px;
-        margin-bottom: 24px;
-    }
-
-    .Values-Left--Top{
-        height: 35%;
-    }
-
-    .Values__Para{
-        line-height: 28px;
-    }
-
-    .Values-Left--Bottom{
-        padding-top: 72px;
-    }
-
-    .Values__Btn{
-        margin-top: 4px;
-    }
-
-    .Values__Div--Right{
-        width: 50%;
-        padding-right: 48px;
-    }
-
-    .Test__Div--Left{
-        padding-left: 48px;
-    }
-
-    .Test__Div--Right{
-        padding-right: 48px;
-    }
-
-    .Dev__Div--Inner{
-        width: 90%;
-    }
-
-    .Left-Plan,
-    .Middle-Plan,
-    .Right-Plan{
-        max-width: 340px;
-    }
-
-
-    .Dev__Header{
-        padding: 0;
-        width: 35%;
-        font-size: 28px;
-    }
-
-    .Dev__Btn-One{
-        margin-left: 56px;
-    }
-
-    .Footer__Div--Top{
-        padding: 0 48px;
-    }
-
-    .Footer__Div--Bottom{
-        padding: 0 48px;
-    }
-
-}
-
-
-@media (max-width: 1200px){
-
-
-    .Row{
-        max-width: 1100px;
-    }
-
-    .Nav__Div--Container{
-        max-width: 1000px;
-    }
-    
-    .Home__Btn{
-            left: 258px;
-            top: 40px;
-            padding: 16px 32px;
-            font-size: 16px;
-        
-    }
-    .Steps__Header{
-        max-width: 75%;  
-        font-size: 44px;
-    }
-
-    .Steps-Right--Top{
-        margin-bottom: 64px;
-    }
-
-    .Values-Left--Top{
-        height: 35%;
-    }
-
-    .Values__Para{
-        line-height: 28px;
-    }
-
-    .Values__Div--Left{
-        width: 55%;
-    }
-
-    .Principle{
-        max-width: 240px;
-    }
-
-    .Principle__Para{
-        padding-left: 12px;
-    }
-
-    .Values-Left--Bottom{
-        padding-top: 72px;
-    }
-
-    .Values__Btn{
-        margin-top: 4px;
-    }
-
-    .Values__Div--Right{
-        width: 45%;
-        padding-right: 48px;
-    }
-
-    .Left-Plan,
-    .Middle-Plan,
-    .Right-Plan{
-        max-width: 330px;
-    }
-
-    .Test__Div--Left{
-        padding-left: 48px;
-    }
-
-    .Test__Div--Right{
-        width: 50%;
-    }
-
-    .Test__Header{
-        font-size: 40px;
-        margin-bottom: 4px;
-    }
-
-    .Test__Para{
-        font-size: 18px;
-    }
-
-    .Dev__Div--Inner{
-        width: 90%;
-    }
-
-    .Footer__Div--Top{
-        padding: 0 48px;
-    }
-
-    .Footer__Div--Bottom{
-        padding: 0 48px;
-    }
-
-    .Dev__Header{
-        margin: 0;
-        margin-left: 64px;
-    }
-
-    .Dev__Btn-One{
-        margin-left: 72px;
-    }
-
-}
-
-@media (max-width: 1100px){
-
-
-    .Row{
-        max-width: 1000px;
-    }
-
-    .Nav__Div--Container{
-        max-width: 900px;
-    }
-    
-    .Home__Btn{
-            left: 232px;
-            top: 42px;
-            padding: 14px 24px;
-            font-size: 16px;
-        
-    }
-
-    .Home__Header{
-        font-size: 38px;
-    }
-
-    .Features__Div--Top{
-        height: 30%;
-    }
-
-    .Features__Header{
-        font-size: 38px;
-    }
-
-    .Features__Subheader{
-        font-size: 16px;
-    }
-
-    .Features__Div--Bottom{
-        height: 70%;
-    }
-
-    .Service__Header{
-        font-size: 20px;
-        margin-top: 88px;
-    }
-
-
-    .Service__Para{
-        font-size: 14px;
-    }
-
-    .Service{
-        max-width: 240px;
-    }
-
-
-    .Nav__Link{
-        display: none;
-    }
-
-    .Nav__Link--Awkward{
-        margin-left: 20px;
-    }
-
-
-    #Features{
-        height: 130vh;
-    }
-
-    .Features__Div--Top{
-        height: 30vh;
-        padding-top: 10vh;
-    }
-
-    .Features__Header{
-        font-size: 48px;
-    }
-
-    .Features__Div--Bottom{
-        padding-top: 5vh;
-        height: 85vh;
-    }
-
-    .Service--Wrapper{
-        height: 100%;
-        justify-content: center;
-    }
-
-    .Service{
-        width: 50%;
-        max-width: 340px;
-        height: calc(100% / 3);
-    }
-
-    .Service__Header{
-        font-size: 22px;
-        margin: 0;
-    }
-
-    .Service__Para{
-        font-size: 16px;
         width: 100%;
+        max-width: 80%;
+    }
+
+    .Quality__Figure{
+        height: 50%;
+        width: 95%;
     }
 
 
     .Steps__Div--Right{
-        padding-left: 12px;
+        padding-top: 12px;
     }
 
-    .Steps__Header{
-        font-size: 44px;
+    .Steps-Right--Top{
+        height: 40%;
+        padding-top: 80px;
     }
 
-    .Values__Div--Left{
-        width: 55%;
+    .Steps-Right--Bottom{
+        height: 60%;
     }
 
-    .Values__Div--Right{
-        width: 45%;
+    .Steps__Figure{
+        height: 45%;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .Service--Wrapper{
+        padding: 12px 0 0 24px;
+    }
+
+    .Service{
+        height: 50%;
+        max-height: 180px;
     }
 
     .Values__Header{
-        font-size: 44px;
+        margin: 24px 0; 
     }
 
-    #Plans{
-        height: 320vh;
+    #Pricing{
+        height: 140vh;
+        padding-top: 90px;
     }
 
-    .Plans__Div--Top{
-        height: 20%;
-        max-height: 300px;
-    }
-
-    .Plans__Div--Bottom{
-        height: 80%;
-    }
-
-    .Plan--Wrapper{
-        padding: 0;
+    .Pricing__Para{
+        width: 100%;
+        max-width: 45%;
     }
 
     .Left-Plan,
     .Middle-Plan,
     .Right-Plan{
-        min-width: 360px;
-        max-height: 600px;
-        margin: 24px 96px;
+        max-width: 340px;
     }
 
-    .Dev__Header{
-        font-size: 32px;
-        margin: 0;
-        margin-left: 48px;
+    .Principle{
+        margin-bottom: 24px;
     }
-}    
 
+    .Dev__Btn-Wrapper{
+        width: 40%;
+    }
 
-@media (max-width: 1000px){
+    .Footer__Row-Column{
+        max-width: 1180px;
+    }
+
+    .Footer-Column{
+        margin-left: 160px;
+    }
+
+    .Footer__Icon{
+        margin-right: 8px;
+    }
+
+}
+
+@media(max-width: 1218px){
     .Row{
-        flex-direction: column;
+        max-width: 1120px;
     }
 
-    #Home{
-        height: 160vh;
+    .Row__Unique{
+        max-width: 1120px;
     }
 
-    .Home__Div--Left{
-        height: 50%;
-        width: 80%;
-        align-items: center;
-    }
-
-    .Home__Header{
-        text-align: center;
-    }
-
-    .Home__Subheader{
-        max-width: 85%;
-        text-align: center;
+    .Nav__Div--Container{
+        max-width: 1120px;
     }
 
     .Home__Btn{
-        left: 450px;
-        top: 40px;
-        padding: 16px 32px;
+        left: 246px;
     }
 
-    .Home__Form{
-        display: flex;
-        justify-content: center;
+    .Footer__Row-Column{
+        max-width: 1120px;
+    }
+
+    .Footer__Icon{
+        margin-right: 4px;
+    }
+
+    .Features__Para{
+        width: 100%;
+        max-width: 45%;
+    }
+}
+
+@media(max-width: 1170px){
+    .Row{
+        max-width: 1080px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 1080px;
+    }
+
+    .Row__Unique{
+        max-width: 1080px;
+    }
+
+    .Home__Btn{
+        left: 232px;
+    }
+
+    .Left-Plan,
+    .Middle-Plan,
+    .Right-Plan{
+        max-width: 300px;
+    }
+    .Footer__Row-Column{
+        max-width: 1080px;
+    }
+
+    .Footer-Column{
+        margin-left: 140px;
+    }
+
+    .Footer__Social{
+        padding-right: 12px;
+    }
+}
+
+@media(max-width: 1120px){
+    .Row{
+        max-width: 1000px;
+    }
+
+    .Row__Unique{
+        max-width: 1000px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 1000px;
+    }
+
+    .Home__Btn{
+        left: 203px;
+    }
+
+    .Home-Left__Figure{
         width: 100%;
         max-width: 90%;
     }
 
-    .Home--Subscript{
-        font-size: 16px;
+    .Home__Header{
+        font-size: 32px;
     }
 
-    .Home__Img--Customer{
-        margin: 0 0 0 72px;
+    .Home-Input--Wrapper{
+        margin-bottom: 56px;
     }
+
+    .Steps__Header{
+        font-size: 36px;
+    }
+
+
+    .Values__Header{
+        max-width: 90%;
+    }
+
+    .Values__Para{
+        font-size: 18px;
+    }
+
+    .Values__Div--Left{
+        padding-top: 0;
+    }
+
+    .Values-Left--Top{
+        height: 45%;
+        width: 100%;
+        align-items: center;
+    }
+
+    .Values-Left--Bottom{
+        height: 55%;
+        width: 100%;
+        padding: 0;
+    }
+
+    .Icon__Figure--Two,
+    .Icon__Figure{
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .Steps-Right--Top{
+        padding-top: 160px
+    }
+
+    .Left-Plan,
+    .Middle-Plan,
+    .Right-Plan{
+        max-width: 290px;
+    }
+
+    .Dev__Btn-Wrapper{
+        width: 60%;
+    }
+
+    .Dev__Div--Inner{
+        padding: 0 48px;
+    }
+
+    .Dev__Btn-Wrapper{
+        width: 50%;
+    }
+
+    .Dev__Header{
+        max-width: 35%;
+    }
+
+    .Dev__Btn-One,
+    .Dev__Btn-Two{
+        padding: 20px 32px;
+        font-size: 14px;
+    }
+
+    .Footer__Row-Column{
+        max-width: 1000px;
+    }
+
+    .Footer-Column{
+        margin-left: 115px;
+    }
+
+
+}
+
+
+@media(max-width: 1040px){
+
+    .Btn__Menu{
+        display: flex;
+        opacity: 1;
+    }
+
+    .Nav__Link,
+    .Nav__Link--Primary,
+    .Nav__Link--Secondary{
+        display: none;
+    }
+
+    .Nav__Div--Container{
+        max-width: 820px;
+    }
+
+    header{
+        height: 120vh;
+    }
+
+    .Row{
+        max-width: 970px;
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    .Row__Unique{
+        max-width: 970px;
+    }
+
+    
+    .Home__Btn{
+        left:  560px;
+        bottom: 18px;
+        padding: 16px 32px;
+    }
+
+    .Home__Div--Left{
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .Home__Header{
+        font-size: 30px;
+        margin-bottom: 24px;
+    }
+
+    .Home__Para{
+        width: 100%;
+        max-width: 60%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .Home-Input--Wrapper{
+        max-height: 20%;
+        margin: 24px 0 28px 0;
+        justify-content: center;
+    }
+
+    input[type="email"]{
+        font-size: 16px;
+        padding: 30px 32px;
+        max-width: 48%;
+    }
+
+    .Home--Caption{
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .Home-Left__Figure{
+        margin: 0 auto;
+        max-width: 50%;
+        max-height: 10%;
+    }
+
 
     .Home__Div--Right{
         height: 50%;
         width: 100%;
+        padding: 0;
+    }
+
+
+    .Home-Right__Figure{
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+
+    #Features{
+        height: 120vh;
+    }
+
+    .Features__Para{
+        max-width: 55%;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .Features__Div--Top{
+        height: 25%;
+    }
+
+    .Features__Div--Bottom{
+        height: 75%
+    }
+
+    .Service--Wrapper{
+        padding: 0;
         justify-content: center;
     }
 
-    .Home__Img--Mask{
+    .Service{
+        width: calc(100% / 3);
+        max-width: 400px;
+        margin: 0 48px;
+        max-height: 200px;
+    }
+
+    .Service-Decor--Inner{
+        max-height: 28%;
+    }
+
+    .Service__Para{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #Quality{
+        height: 80vh;
+    }
+
+    .Quality__Div--Left{
+        padding: 0;
+    }
+
+    .Quality__Header{
+        font-size: 36px;
+        letter-spacing: 1px;
+    }
+
+    .Quality__Para{
+        font-size: 16px;
+        width: 100%;
+        max-width: 80%;
+    }
+
+    .Quality__Figure{
+        height: 55%;
+        width: 95%;
+    }
+
+    #Steps{
+        margin-top: 10vh;
+        height: 70vh;
+        margin-bottom: 15vh;
+    }
+
+    .Steps__Div--Right{
+        padding-top: 40px;
+    }
+
+    .Steps-Right--Top{
+        padding-top: 0;
+    }
+
+    .Steps-Right--Top{
+        height: 30%;
+        width: calc(100% - 56px);
+    }
+
+    .Steps-Right--Bottom{
         height: 70%;
-        width: 70%;
+        width: calc(100% - 56px);
     }
 
-    .Home__Img{
-        margin: 0 0 0 48px;
-    }
-}
-
-@media (max-width: 980px){
-    .Row{
-        max-width: 880px;
+    .Steps__Header{
+        max-width: 100%;
     }
 
-    .Home__Btn{
-        left: 379px;
-        top: 40px;
-        padding: 16px 32px;
+    .Steps__Figure{
+        height: 60%;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+
+    .Values__Header{
+        font-size: 36px;
     }
 
     .Values__Para{
         font-size: 16px;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .Values__Div--Left{
+        padding: 0;
+    }
+
+    .Values-Left--Bottom{
+        align-items: center;
+    }
+
+    .Principle--Wrapper{
+        height: 80%;
+        flex-wrap: wrap;
+        padding-top: 0;
+        align-items: center;
+    }
+
+    .Principle{
+        width: 80%;
+        height: 40%;
+    }
+
+    .Principle--Bottom{
+        width: 70%;
+    }
+
+    .Principle__Para{
+        font-weight: 400;
+    }
+
+    .Principle__Btn{
+        margin: 0;
+    }
+
+
+    #Pricing{
+        height: 310vh;
+        padding-top: 0;
+    }
+
+    .Pricing__Div--Top{
+        height: 40vh;
+        padding-top: 80px;
+    }
+
+    .Pricing__Column{
+        height: 100%;
+        max-height: 280vh;
+    }
+
+    .Pricing-Row__Column{
+        height: 70%;
+        width: 100%;
+    }
+
+    .Pricing__Para{
+        width: 100%;
+        max-width: 55%;
+        font-size: 16px;
+    }
+
+    .Pricing__Div--Bottom{
+        height: 290vh;
+        justify-content: center;
+    }
+
+    .Plan--Wrapper{
+        justify-content: center;
+        align-items: center;
+        height: 290vh;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .Left-Plan,
+    .Middle-Plan,
+    .Right-Plan{
+        max-height: 90vh;
+        min-width: 380px;
+        margin: 0 0 80px 0;
+    }
+
+    #Dev{
+        margin-top: 30vh;
+    }
+
+    .Footer__Row-Column{
+        max-width: 980px;
+    }
+
+    .Footer-Column{
+        margin: 0 0 0 72px;
+    }
+
+    .Footer__Div--Bottom{
+        max-width: 980px;
+    }
+
+    .Footer__Social{
+        padding-right: 16px;
+    }
+
+    .Footer__Icon{
+        margin-right: 12px;
+    }
+
+    .Footer__Figure{
+        margin-right: 12px;
+    }
+
+}
+
+@media(max-width: 1000px){
+    .Row__Unique{
+        max-width: 900px;
+    }
+
+
+    .Steps__Header{
+        font-size: 34px;
+    }
+
+    .Footer__Row-Column{
+        max-width: 900px;
+    }
+
+    .Footer-Column{
+        margin-left: 90px;
+    }
+
+    .Footer__Social{
+        padding: 0;
+    }
+
+    .Footer__Icon{
+        margin-right: 7px;
+    }
+
+    .Footer__Div--Copyright{
+        width: 40%;
+        padding: 0;
+        padding-left: 40px;
+    }
+}
+
+@media(max-width: 970px){
+    .Row{
+        max-width: 900px;
+    }
+
+    .Home__Btn{
+        left: 508px;
+    }
+
+    .Row__Unique{
+        max-width: 820px;
+    }
+
+    .Row__Of__Torture{
+        max-width: 820px;
+    }
+
+    .Home-Right__Figure{
+        width: 70%;
+    }
+
+    .Steps__Div--Right{
+        padding-left: 20px;
+    }
+
+    .Steps-Right--Top,
+    .Steps-Right--Bottom{
+        width: calc(100% - 20px);
+    }
+
+    .Steps__Figure{
+        height: 55%;
+        width: 100%;
+        margin-top: 48px;
+    }
+
+    .Quality__Div--Left{
+        padding-left: 12px
+    }
+
+    .Quality__Para{
+        max-width: 90%;
+    }
+
+    .Principle__Header{
+        font-size: 20px;
+    }
+
+    .Principle--Bottom{
+        width: 100%;
+    }
+
+    .Principle__Para{
+        font-size: 16px;
+        width: 100%;
+        max-width: 80%;
+    }
+
+    #Pricing{
+        margin-top: 10vh;
+    }
+
+    .Footer__Row-Column{
+        max-width: 820px;
+    }
+
+    .Footer__Icon{
+        margin-right: 2px;
+    }
+
+    .Footer-Copyright__Para{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 900px){
+    .Row{
+        max-width: 740px;
+    }
+
+    .Row__Unique{
+        max-width: 740px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 700px;
+    }
+
+    .Home__Btn{
+        left: 390px;
+    }
+
+    .Home-Left--Figure{
+        max-width: 40%;
+    }
+
+    .Quality__Figure{
+        height: 50%;
+    }
+
+    .Values-Left--Bottom{
+        padding-top: 24px;
+    }
+
+    .Principle__Btn{
+        margin-top: 12px;
+    }
+
+    .Footer__Row-COlumn{
+        max-width: 740px;
+    }
+
+    .Footer-Column{
+        margin-left: 70px;
+    }
+}
+
+@media(max-width: 820px){
+    .Row__Of__Torture{
+        max-width: 780px;
+    }
+
+    .Steps__Div--Right{
+        padding-left: 0;
+    }
+
+    .Steps__Figure{
+        width: 85%;
+        height: 40%;
+        max-height: 230px;
+    }
+
+    .Footer__Row-Column{
+        max-width: 710px;
+    }
+
+    .Footer-Column{
+        margin-left: 60px;
+    }
+
+    .Footer__Div--Copyright{
+        width: 45%;
+    }
+
+    .Footer__Icon{
+        margin-right: 8px;
+    }
+}
+
+@media(max-width: 860px){
+
+
+    .Footer__Row-Column{
+        max-width: 740px;
+    }
+
+    .Footer__Div--Copyright{
+        width: 50%;
+    }
+
+    .Footer-Column{
+        margin-left: 32px;
+    }
+
+    .Footer__Icon{
+        margin-right: 12px;
+    }
+    
+}
+
+@media(max-width: 768px){
+    .Row{
+        max-width: 700px;
+    }
+
+    .Row__Unique{
+        max-width: 700px;
+        flex-direction: column-reverse;
+    }
+
+    .Row__Of__Torture{
+        flex-direction: column;
+    }
+
+    .Nav__Div--Container{
+        max-width: 640px;
+    }
+
+    .Home__Para{
+        font-size: 16px;
+        font-weight: 500;
+        max-width: 70%;
+    }
+
+    input[type="email"]{
+        max-width: 60%
+    }
+
+    .Home__Btn{
+        padding: 18px 32px;
+        left: 414px;
+        bottom: 18px;
+        font-size: 14px;
+    }
+
+    .Home-Left__Figure{
+        max-width: 70%;
+    }
+
+    #Features{
+        height: 240vh;
+    }
+
+    .Features__Div--Top{
+        max-height: 40vh;
+    }
+
+    .Service--Wrapper{
+        height: 100%;
+    }
+
+    .Service{
+        width: 100%;
+        max-height: 180px;
+        margin: 0;
+        margin-left: 64px;
+    }
+
+    .Service-Decor--Inner{
+        max-width: 60px;
+    }
+
+    .Service__Para{
+        max-width: 70%;
+    }
+    
+    #Quality{
+        height: 120vh;
+    }
+
+    .Quality__Div--Right{
+        height: 50%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Quality__Figure{
+        height: 90%;
+        width: 70%;
+        margin-bottom: 48px;
+    }
+
+    .Quality__Header{
+        max-width: 60%;
+        margin: 28px 0;
+    }
+
+    .Quality__Para{
+        max-width: 60%;
+        font-size: 14px;
+    }
+
+    .Quality__Div--Left{
+        height: 50%;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+        padding-bottom: 48px;
+    }
+
+    #Steps{
+        height: 120vh;
+        margin-top: 0;
+    }
+
+    .Steps__Div--Left{
+        height: 30%;
+        width: 100%;
+        align-items: center;
+    }
+
+    .Steps__Figure{
+        max-width: 50%;
+        height: 100%;
+        max-height: 100%;
+    }
+
+    .Steps__Div--Right{
+        height: 70%;
+        width: 100%;
+        padding: 0;
+    }
+
+    .Steps-Right--Top{
+        height: 30%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .Steps__Header{
+        text-align: center;
+    }
+
+    .Step--Wrapper{
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .Steps-Right--Bottom{
+        height: 70%;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .Step{
+        margin: 0 auto;
+        width: 50%;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .Number{
+        margin: 0;
+    }
+
+    .Step__Header{
+        margin: 8px 0; 
+    }
+
+    .Step__Para{
+        margin: 0 auto;
+    }
+
+    .Steps__Figure{
+        width: 60%;
+        height: 80%;
+    }
+
+    #Values{
+        margin-top: 10vh;
+        height: 130vh;
+    }
+
+    .Values__Div--Right{
+        height: 100%;
+        max-height: 40vh;
+        width: 70%;
+    }
+
+    .Values__Figure{
+        max-height: 90%;
+    }
+
+    .Values__Div--Left{
+        height: 100%;
+        max-height: 90vh;
+        width: 70%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .Values-Left--Top{
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Values__Header{
+        margin: 12px 0;
+    }
+
+    .Values-Left--Bottom{
+        height: 60%;
+        padding: 0;
+    }
+
+    .Values__Para{
+        font-size: 14px;
+        margin: 0 auto;
+        line-height: 24px;
+        max-width: 80%;
+    }
+
+    .Icon__Figure{
+        max-height: 40px;
+        max-width: 40px;
+    }
+
+    .Principle{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .Principle--Top{
+        justify-content: center;
+        height: 40%;
+    }
+
+    .Principle__Para{
+        color: #718096;
+    }
+
+    .Pinciple__Btn{
+        margin: 0 auto;
+    }
+
+    .Pricing__Header{
+        max-width: 80%;
+        padding: 12px 0;
+        margin: 0 auto;
+    }
+
+    #Pricing{
+        margin-top: 10vh;
+    }
+
+    .Pricing__Para{
+        max-width: 80%;
+    }
+
+    .Pricing__Div--Top{
+        padding-top: 32px;
+    }
+
+    .Dev__Div--Inner{
+        padding: 24px;
+    }
+
+    .Dev__Header{
+        max-width: 35%;
+    }
+
+    .Dev__Btn-Wrapper{
+        width: 60%;
+    }
+
+    .Dev__Btn-One,
+    .Dev__Btn-Two{
+        padding: 22px 34px;
+    }
+
+    .Principle__Para{
+        margin: 0 auto;
+    }
+
+    .Footer__Row-Column{
+        max-width: 680px;
+    }
+
+    .Footer-Column{
+        margin-left: 40px;
+    }
+
+    .Footer__Div--Copyright{
+        padding: 0;
+        width: 40%;
+    }
+
+    .Footer-Copyright__Para{
+        font-size: 15px;
+    }
+
+    .Footer__Social{
+        max-width: 200px;
+    }
+
+    .Footer__Icon{
+        font-size: 18px;
+        margin-right: 14px;
+    }
+
+}
+
+@media(max-width: 700px){
+    .Nav__Div--Container{
+        max-width: 580px;
+    }
+
+    .Row{
+        max-width: 600px;
+    }
+
+    .Row__Column{
+        max-width: 600px;
+    }
+
+    .Home__Div--Right{
+        align-items: center;
+    }
+
+    .Home__Btn{
+        left: 334px;
+        bottom: 18px;
+    }
+
+    .Section__Header{
+        font-size: 44px;
+    }
+
+    #Features{
+        margin-top: 0;
+    }
+
+    .Features__Para{
+        max-width: 80%;
+    }
+
+    .Features__Div--Top{
+        padding-top: 24px;
+    }
+
+    #Quality{
+        margin-top: 0;
+    }
+
+    .Quality__Figure{
+        height: 70%;
+        width: 55%;
+    }
+
+    .Values__Header{
+        max-width: 80%;
+    }
+
+    .Dev__Div--Inner{
+        flex-direction: column;
+    }
+
+    .Dev__Header{
+        max-width: 100%;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .Footer__Row-Column{
+        max-width: 600px;
+    }
+
+    
+}
+
+@media(max-width: 639px){
+    .Row{
+        max-width: 580px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 540px;
+    }
+
+    .Row__Unique{
+        max-width: 580px;
+    }
+
+    .Row__Column{
+        max-width: 580px;
+    }
+
+    .Section__Header{
+        font-size: 40px;
+    }
+
+    .Features__Div--Top{
+        max-height: 220px;
+    }
+
+    .Home__Btn{
+        left: 76px;
+        bottom: -64px;
+        padding: 18px 174px;
+        font-size: 16px;
+    }
+
+    .Home__Para{
+        width: 100%;
+        max-width: 90%;
+    }
+
+    input[type="email"]{
+        width: 100%;
+        max-width: 75%;
+    }
+
+    .Home--Caption{
+        margin-top: 100px;
+    }
+
+    .Quality__Figure{
+        height: 70%;
+    }
+
+    .Quality__Header{
+        max-width: 100%;
+    }
+
+    .Quality__Div--Left{
+        padding: 0;
+    }
+
+    .Steps__Div--Right{
+        padding: 0;
+    }
+
+    #Values{
+        margin-top: 20vh;
+    }
+
+    .Values__Div--Left{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .Values__Para{
+        margin-top: 12px;
+    }
+
+    .Principle__Para{
+        margin: 0 auto;
+        max-width: 50%;
+    }
+
+    .Dev__Header{
+        font-size: 24px;
+    }
+
+    .Dev__Btn-One,
+    .Dev__Btn-Two{
+        padding: 18px 24px;
+    }
+
+    .Footer__Row-Column{
+        max-width: 580px;
+    }
+
+    .Footer-Column{
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 590px){
+    .Nav__Div--Container{
+        max-width: 480px;
+    }
+
+    nav{
+        height: 80px;
+    }
+
+    .Home__Div--Left{
+        height: calc(50% - 80px);
+        padding-top: 24px;
+    }
+
+
+    .Home__Btn{
+        left: 60px;
+        padding: 20px 144px;
+        font-size: 16px; 
+    }
+
+
+    .Home-Right__Figure{
+        height: 100%;
+        width: 90%;
+        max-width: 100%;
+    }
+    .Home__Header{
+        text-align: center;
+    }
+
+    .Row{
+        max-width: 500px;
+    }
+
+    .Row__Column{
+        max-width: 500px;
+    }
+
+    .Section__Header{
+        font-size: 36px;
+    }
+
+    .Features__Para{
+        max-width: 100%;
+    }
+
+    .Features__Div--Top{
+        max-height: 280px;
+    }
+
+    #Quality{
+        height: 90vh;
+        margin-bottom: 10vh;
+    }
+
+    .Quality__Div--Right{
+        height: 40%;
+    }
+
+    .Quality__Div--Left{
+        height: 60%;
+    }
+    .Quality__Header{
+        max-width: 80%;
+    }
+
+    .Steps__Figure{
+        height: 80%;
+        width: 60%;
+        max-width: 100%;
+    }
+
+    .Step__Para{
+        max-width: 90%;
+    }
+
+    .Pricing__Header{
+        font-size: 36px;
+        letter-spacing: 1px;
+    }
+
+    .Pricing__Para{
+        font-size: 14px;
+    }
+
+    .Dev__Header{
+        max-width: 70%;
+    }
+
+    Footer{
+        height: 250vh;
+    }
+
+    .Footer__Div--Top{
+        width: 100%;
+    }
+
+
+    .Footer__Row-Column{
+        max-width: 240px;
+
+    }
+
+    .Footer-Column--Wrapper{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-top: 24px;
+    }
+
+    .Footer-Column,
+    .Footer-Column-One{
+        width: 100%;
+        max-width: 220px;
+        max-height: 20%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Footer__Div--Bottom{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Footer__Figure--Wrapper{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: calc(100% / 3);
+    }
+
+    .Footer__Figure{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Footer__Div--Copyright{
+        height: calc(100% / 3);
+        width: 100%;
+        text-align: center;
+    }
+
+    .Footer__Header{
+        font-size: 20px;
+    }
+
+    .Footer__Link{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .Footer__Link::after{
+        width: 100%;
+    }
+
+    .Footer__Header{
+        margin-top: 24px;
+    }
+
+    .Footer__Logo{
+        font-size: 24px;
+        margin-left: 12px;
+    }
+
+    .Footer-Copyright__Para{
+        max-width: 80%;
+        font-size: 20px;
+        color: #ffffffd2;
+    }
+
+    .Footer__Social{
+        padding: 0;
+    }
+
+    .Footer__Icon{
+        font-size: 32px;
+    }
+
+    .Footer__Social{
+        height: calc(100% / 3);
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+}
+
+@media(max-width: 520px){
+
+    .Row{
+        max-width: 440px;
+    }
+
+    .Row__Column{
+        max-width: 440px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 440px;
+    }
+
+    .Home__Btn{
+        left: 52px;
+        padding: 20px 124px;
+        font-size: 16px; 
+    }
+    
+
+    .Left-Plan,
+    .Middle-Plan,
+    .Right-Plan{
+        max-height: 90vh;
+        min-width: 330px;
+    }
+
+    .Section__Header{
+        font-size: 30px;
+    }
+
+    .Service{
+        margin-left: 24px;
+    }
+
+    .Service__Para{
+        max-width: 85%;
+    }
+
+    .Quality__Header{
+        font-size: 30px;
+    }
+
+    .Steps__Header{
+        font-size: 30px;
+    }
+
+    .Values__Header{
+        font-size: 30px;
+    }
+
+    .Dev__Header{
+        max-width: 90%;
+    }
+
+    .Dev__Btn-Wrapper{
+        width: 100%;
+    }
+
+     .Footer__Header{
+        font-size: 18px;
+    }
+
+    .Footer__Link{
+        font-size: 16px;
+    }
+
+    .Footer__Logo{
+        font-size: 20px;
+    }
+
+    .Footer__Icon{
+        font-size: 30px;
+    }
+
+    .Footer-Copyright__Para{
+        font-size: 18px;
+    }
+
+}
+
+
+@media(max-width: 480px){
+    .Row{
+        max-width: 380px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 380px;
+    }
+
+    .Home__Btn{
+        left: 48px;
+        padding: 20px 100px;
+        font-size: 16px; 
+    }
+
+    .Home-Left__Figure{
+        max-height: 8%;
+    }
+
+    .Row__Column{
+        max-width: 380px;
+    }
+
+    .Service{
+        margin-left: 24px;
+    }
+
+    .Service__Para{
+        max-width: 95%;
+    }
+
+    .Quality__Para{
+        max-width: 80%;
+    }
+
+    .Quality__Mask{
+        height: 10%;
+    }
+
+    .Quality__Header{
+        max-width: 80%;
+        font-size: 28px;
+        margin-top: 12px;
+    }
+
+    .Steps__Header{
+        font-size: 30px;
+    }
+
+    .Steps__Figure{
+        width: 70%;
+        max-width: 100%;
+    }
+
+    .Step__Para{
+        max-width: 100%;
+    }
+
+    .Step{
+        width: 60%;
+    }
+
+    .Values__Div--Right{
+        width: 100%;
+    }
+
+    .Values__Header{
+        font-size: 28px;
+        max-width: 65%;
+    }
+
+    .Values__Figure{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .Pricing__Header{
+        font-size: 28px;
+    }
+
+    .Pricing__Para{
+        max-width: 70%;
+    }
+
+    .Left-Plan,
+    .Middle-Plan,
+    .Right-Plan{
+        max-height: 90vh;
+        min-width: 300px;
+    }
+
+    .Dev__Header{
+        font-size: 22px;
+        max-width: 100%;
+    }
+
+    .Dev__Btn-Wrapper{
+        width: 100%;
+    }
+
+    .Footer__Header{
+        font-size: 18px;
+    }
+
+    .Footer__Link{
+        font-size: 16px;
+    }
+
+    .Footer__Logo{
+        font-size: 20px;
+    }
+
+    .Footer__Icon{
+        font-size: 30px;
+    }
+
+    .Footer-Copyright__Para{
+        font-size: 18px;
+    }
+
+}
+
+@media(max-width: 420px){
+    .Row{
+        max-width: 300px;
+    }
+
+    .Row__Column{
+        max-width: 300px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 278px;
+    }
+
+    .Quality__Figure{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .Steps__Figure{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .Home__Btn{
+        left: 38px;
+        padding: 20px 70px;
+    }
+
+    .Row__Unique{
+        max-width: 300px;
+    }
+
+    .Row__Of__Torture{
+        max-width: 300px;
+    }
+
+    .Service{
+        margin: 0;
+    }
+
+    .Values__Header{
+        max-width: 100%;
+    }
+
+    .Values__Para{
+        max-width: 100%;
+    }
+
+    .Principle__Para{
+        max-width: 100%;
+    }
+}
+
+
+@media(max-width: 340px){
+    .Row{
+        max-width: 260px;
+    }
+
+    .Row__Unique{
+        max-width: 260px;
+    }
+
+    .Row__Column{
+        max-width: 260px;
+    }
+
+    .Home__Div--Left{
+        padding-top: 40px;
+    }
+
+    .Home__Btn{
+        left: 38px;
+        padding: 20px 50px;
+    }
+
+    .Home__Para{
+        max-width: 100%;
+    }
+
+    #Features{
+        margin-top: 0;
+    }
+
+    .Section__Header{
+        font-size: 24px;
+    }
+
+    .Service{
+        width: 80%;
+    }
+
+    .Service__Header{
+        font-size: 20px;
+    }
+
+    .Service__Para{
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .Features__Para{
+        font-size: 14px;
+    }
+
+    .Steps__Figure{
+        max-height: 60%;
+        max-width: 80%;
+    }
+
+    .Steps__Header{
+        width: 70%;
+        max-width: 70%;
+    }
+
+    .Step--Wrapper{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Step{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .Principle{
+        margin-bottom: 0;
+        padding-top: 12px;
+    }
+
+    .Left-Plan,
+    .Middle-Plan,
+    .Right-Plan{
+        min-width: 260px;
+    }
+
+}
+
+@media(max-width: 300px){
+    .Row{
+        max-width: 240px;
+    }
+
+    .Nav__Div--Container{
+        max-width: 240px;
+    }
+
+    .Row__Unique{
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .Row__Of__Torture{
+        max-width: 240px;
+    }
+
+    input[type="email"]{
+        padding: 28px;
+    }
+
+    .Home__Btn{
+        left: 30px;
+        padding: 20px 46px;
+    }
+
+    .Home__Div--Left{
+        margin-top: 10vh;
+    }
+
+    .Home--Caption{
+        max-width: 100%;
+    }
+
+    .Home__Para{
+        font-size: 14px;
+        margin-top: 0px;
+    }
+
+    .Home-Input--Wrapper{
+        margin-bottom: 20px;
+    }
+
+    .Home-Left__Figure{
+        height: 100%;
+        max-height: 8%;
+        max-width: 90%;
+    }
+
+    .Section__Header{
+        font-size: 28px;
+    }
+
+    #Features{
+        height: 240vh;
+        margin-top: 0px;
+    }
+
+    .Features__Div--Top{
+        height: 40vh;
+        align-items: center;
+    }
+
+    .Features__Para{
+        font-size: 14px;
+        max-width: 90%;
+    }
+
+    .Features__Div--Bottom{
+        height: 200vh;
+        align-items: center
+    }
+
+    .Service{
+        align-items: center;
+        justify-content: center;
+        max-height: 200px;
+        margin: 12px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .Service-Decor--Container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .Service-Decor--Inner{
+        height: 100%;
+        max-height: 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .Service__Figure{
+        width: 25%;
+        min-width: 50px;
+        min-height: 50px;
+        height: 80%;
+    }
+
+    .Service__Para{
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    #Quality{
+        height: 100vh;
+    }
+
+    .Quality__Figure{
+        width: 85%;
+        height: 70%;
+    }
+
+    .Quality__Header{
+        font-size: 30px;
+        max-width: 100%;
+    }
+
+    .Quality__Para{
+        max-width: 85%;
+    }
+
+    .Quality__Div--Left{
+        padding: 0;
+    }
+
+    #Steps{
+        height: 140vh;
+    }
+
+    .Step--Wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Step{
+        width: 100%;
+        max-width: 90%;
+        margin: 0px 0px 20px 0px;
+    }
+
+    .Step--Text{
+        width: 100%;
+    }
+
+    .Step__Para{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .Steps__Div--Left{
+        width: 100%;
+        height: 100%;
+    }
+
+    .Steps__Figure{
+        width: 100%;
+        max-width: 90%;
+        max-height: 50%;
+    }
+
+    #Values{
+        height: 130vh;
+    }
+
+    .Values__Div--Right{
+        height: 40vh
+    }
+
+    .Values__Header{
+        font-size: 30px;
+        max-width: 100%;
+        letter-spacing: 1px;
+    }
+
+    .Values__Div--Left{
+        height: 90vh
+    }
+
+    .Values-Left--Top{
+        height: 40%;
+        margin-bottom: 32px;
+    }
+
+    .Values-Left--Bottom{
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .Values__Div--Right{
+        height: 50%;
+        width: 100%;
+    }
+
+    .Principle{
+        margin: 0 auto;
+        padding-top: 32px;
+        max-height: 160px;
+    }
+
+    .Principle--Bottom{
+        height: 100%;
+        align-items: center;
+    }
+
+    .Principle__Para{
+        max-width: 100%;
+    }
+
+    .Principle__Btn{
+        margin-top: 16px;
+    }
+
+    .Pricing__Header{
+        font-size: 24px;
+    }
+
+    .Pricing__Para{
+        max-width: 70%;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .Left-Plan,
+    .Middle-Plan,
+    .Right-Plan{
+        min-width: 230px;
+    }
+
+    .LP--For,
+    .MP--For,
+    .RP--For{
+        max-width: 60%;
+        text-align: center;
+    }
+
+    .Dev__Header{
+        font-size: 16px;
+    }
+
+    .Dev__Btn-One,
+    .Dev__Btn-Two{
+        padding: 12px 20px;
+        font-size: 12px;
+        margin-right: 4px;
+    }
+
+
+    .Footer__Row-Column{
+        max-width: 240px;
+
+    }
+
+    .Row__Column{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Service{
+        flex-direction: column;
     }
 }
